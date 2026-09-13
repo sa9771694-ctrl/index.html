@@ -100,7 +100,7 @@ body.preview .previewBox{display:flex}
 .langSecondary span{font-size:12px;font-weight:850;color:var(--soft);opacity:.98}
 .langLabel{display:block;margin-top:5px;font-size:9px;font-weight:900;letter-spacing:.08em;color:rgba(255,255,255,.72)}
 .langBubble.swap{animation:langSwap .42s ease}
-@keyframes langSwap{0%{opacity:.35;transform:translateX(-50%) translateY(-3px) scale(.985)}100%{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}}
+@keyframes langSwap{0%{opacity:.35;transform:translateX(-60%) translateY(-3px) scale(.985)}100%{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}}
 
 .heartMoment{
   position:absolute;right:10%;bottom:11%;z-index:18;pointer-events:none;
@@ -247,15 +247,15 @@ body.lunch .dot{background:#78ffb5;box-shadow:0 0 23px #78ffb5}
     </div>
 
     <div class="bottom" id="bottomBadges">
-      <div class="badge" id="lunchBadge">🎉 Feiring i lunsjpausen 11:00–12:00</div>
+      <div class="badge" id="lunchBadge">🎉 </div>
       <div class="badge" id="badgePerson">🎂 I dag feirer vi</div>
       <div class="badge">✨ Gratulasjoner på flere språk</div>
     </div>
   </section>
 
   <footer class="footer">
-    <span>Automatisk etter dato • Europe/Oslo</span>
-    <span>Fast design per ansatt • ingen alder vises • 18 språk • 3 språk vises samtidig og bytter automatisk</span>
+    <span></span>
+    <span></span>
     <span>Bergeland vgs – VOV</span>
   </footer>
 </div>
@@ -264,7 +264,7 @@ body.lunch .dot{background:#78ffb5;box-shadow:0 0 23px #78ffb5}
 const STAFF=[{"name":"Annette Petersen-Øverleir","date":"09-07"},{"name":"Yulia Rosina","date":"09-10"},{"name":"Liv Marie Nilsson","date":"09-14"},{"name":"Bergitte Tangen","date":"09-18"},{"name":"Annette Knudsen","date":"09-27"},{"name":"Bente Steinsland","date":"10-10"},{"name":"Bereket Tesfamichael Zerabruk","date":"10-11"},{"name":"Monica Iren Adamsen","date":"10-21"},{"name":"Dina Sofie Botten Johannesen","date":"10-31"},{"name":"Rafiullah Naziri","date":"11-06"},{"name":"Alise Kvilhaugsvik Aske","date":"11-08"},{"name":"Sevket Cikmaz","date":"11-10"},{"name":"Mathilde Lunde Nordstrand","date":"11-14"},{"name":"Andreas Egholm","date":"11-15"},{"name":"Anniken Årebråt Harestad","date":"11-19"},{"name":"Jan Martin Salvesen","date":"11-23"},{"name":"Maritha Birgitte Vollan","date":"11-23"},{"name":"Torunn Egeland","date":"11-30"},{"name":"Jørgen Jakobsson","date":"11-30"},{"name":"Turid Karin Tjemsland Gunstead","date":"12-06"},{"name":"Arman Hosseyni","date":"12-25"},{"name":"Tora Skarstad Rott","date":"12-25"},{"name":"Ole-Andreas Rosfjord Løland","date":"12-29"},{"name":"Anne M H Thomassen","date":"12-31"},{"name":"Lindy Ann Dybvik Andersen","date":"01-01"},{"name":"Ahmed Mohamed Alismail","date":"01-01"},{"name":"Victoria Boman Idsøe","date":"01-30"},{"name":"Lise Vistnes","date":"01-30"},{"name":"Benedicte Vindseth","date":"02-03"},{"name":"Kristine Tjensvoll","date":"03-05"},{"name":"Andreas Stokkeland","date":"03-12"},{"name":"Lydia Najmudeen Amundsen","date":"03-19"},{"name":"Siren Kristina Christensen","date":"03-23"},{"name":"Inga Brodal Delbekk","date":"03-24"},{"name":"Idunn Engås","date":"03-25"},{"name":"Therese Igesund Thorsnæs","date":"04-06"},{"name":"Lisbeth Kristin Trøite Bjørnø","date":"04-18"},{"name":"Ellen Tengesdal","date":"05-05"},{"name":"Lise Johannessen","date":"05-07"},{"name":"Ingvar Bjørheim","date":"05-30"},{"name":"Marianne Person","date":"06-15"},{"name":"Malin Kalsås","date":"06-19"},{"name":"John Egil Gilje","date":"06-22"},{"name":"Kathrine Kittelsen","date":"07-02"}];
 
 const PALETTES=[
-["#170713","#4a1735","#d9538d","#ffbfd9","#ffe6a3"],
+["#172713","#4a1735","#d9588d","#ffbfd9","#ffe6a3"],
 ["#06142a","#163d72","#4f8dff","#cfe1ff","#ffe39a"],
 ["#071b17","#145f4b","#3bc98a","#d7fff0","#ffe49b"],
 ["#241006","#7d3516","#f27743","#ffd0b8","#ffe59a"],
@@ -343,7 +343,7 @@ function phaseText(){
   const p=currentOslo(),h=Number(p.hour);
   document.body.classList.toggle("lunch",h===11);
   const badge=document.getElementById("lunchBadge"),lab=document.getElementById("phaseLabel");
-  if(h<11){badge.textContent="🎉 Feiring i lunsjpausen 11:00–12:00";lab.textContent="FEIRING"}
+  if(h<11){badge.textContent="🎉 ";lab.textContent="FEIRING"}
   else if(h===11){badge.textContent="🎉 FEIRING PÅGÅR NÅ • 11:00–12:00";lab.textContent="PÅGÅR NÅ"}
   else{badge.textContent="🎉 Ha en fin bursdag videre!";lab.textContent="BURSDAG"}
 }
