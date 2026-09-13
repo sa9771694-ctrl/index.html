@@ -18,14 +18,14 @@ body{
     radial-gradient(circle at 14% 16%,color-mix(in srgb,var(--accent) 24%,transparent),transparent 31%),
     radial-gradient(circle at 86% 76%,color-mix(in srgb,var(--warm) 11%,transparent),transparent 28%),
     linear-gradient(135deg,var(--bg1),var(--bg2));
-  background-size:135% 135%;
+  background-size:138% 138%;
   animation:bgMove 16s ease-in-out infinite alternate;
-  transition:background .8s ease;
+  transition:background .5s ease;
 }
 body:before{
   content:"";position:fixed;inset:0;pointer-events:none;opacity:.035;
   background-image:linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),
-                   linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);
+                   linear-gradient(90deg,rgba(255,255,255,.15) 1px,transparent 1px);
   background-size:70px 70px;
 }
 #fx{position:fixed;inset:0;width:100%;height:100%;z-index:40;pointer-events:none}
@@ -100,7 +100,7 @@ body.preview .previewBox{display:flex}
 .langSecondary span{font-size:12px;font-weight:850;color:var(--soft);opacity:.98}
 .langLabel{display:block;margin-top:5px;font-size:9px;font-weight:900;letter-spacing:.08em;color:rgba(255,255,255,.72)}
 .langBubble.swap{animation:langSwap .42s ease}
-@keyframes langSwap{0%{opacity:.35;transform:translateX(-60%) translateY(-3px) scale(.985)}100%{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}}
+@keyframes langSwap{0%{opacity:.35;transform:translateX(-60%) translateY(-3px) scale(.986)}100%{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}}
 
 .heartMoment{
   position:absolute;right:10%;bottom:11%;z-index:18;pointer-events:none;
@@ -162,7 +162,7 @@ body.l6 .happy{font-family:Georgia,"Times New Roman",serif;font-style:italic;let
 body.l6 .kicker,body.l6 .rotator{align-self:center}
 
 body.lunch .hero{box-shadow:0 28px 90px rgba(0,0,0,.31),0 0 62px color-mix(in srgb,var(--warm) 14%,transparent)}
-body.lunch .dot{background:#78ffb5;box-shadow:0 0 23px #78ffb5}
+body.lunch .dot{background:#79ffb5;box-shadow:0 0 23px #79ffb5}
 
 @keyframes bgMove{0%{background-position:0% 20%}100%{background-position:100% 80%}}
 @keyframes spin{to{transform:rotate(360deg)}} @keyframes spinR{to{transform:rotate(-360deg)}}
@@ -287,7 +287,7 @@ const WISHES=[
 const ROT=[
 "Bursdagsstemning hele dagen 🎉",
 "Ballonger, gaver og konfetti ✨",
-"Feiring i lunsjpausen 11:00–12:00 🎂",
+" 🎂",
 "En ekstra hyggelig dag på Bergeland 💛",
 "Smil, glede og gode øyeblikk 🎈",
 "Hipp hipp hurra! 🥳"
@@ -415,10 +415,10 @@ function showHeartMoment(){
 function tinyHeart(x=null,y=null){
   if(!activePerson)return;
   const h=document.createElement("div");h.className="tinyHeart";
-  h.textContent=["💗","💖","💕","💓","💞"][Math.floor(Math.random()*5)];
+  h.textContent=["💗","💖","💕","💓","💞"][Math.floor(Math.random()*6)];
   if(x===null){
     const side=Math.random()<.5;
-    h.style.left=(side?(3+Math.random()*13):(84+Math.random()*13))+"%";
+    h.style.left=(side?(3+Math.random()*13):(84+Math.random()*14))+"%";
     h.style.top=(60+Math.random()*25)+"%";
   } else {
     h.style.left=x+"px";h.style.top=y+"px";
